@@ -20,7 +20,23 @@ namespace Transport.Presenter
 
         public void Submit()
         {
-            
+            if (ApplicationContext.Vehicles.Count == 5)
+            {
+                _view.CloseForm();
+                return;
+            }
+
+            ApplicationContext.Vehicles.Add(new Car(
+                _view.GetBrandVehicle(),
+                _view.GetModelVehicle(),
+                ApplicationContext.Fuels.Where(f => f.Name == _view.GetFuelNameVehicle()).FirstOrDefault(),
+                _view.GetFuelConsumptionVehicle(),
+                _view.GetFuelTankCapasityVehicle(),
+                _view.GetMaxSpeedVehicle(),
+                _view.GetStartSpeedVehicle()
+            ));
+
+            _view.NextPage(ApplicationContext.Vehicles.Count);
         }
     }
 }

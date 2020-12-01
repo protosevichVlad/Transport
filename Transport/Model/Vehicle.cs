@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Transport.Model
 {
-    class Vehicle
+    public class Vehicle
     {
         public string VehicleBrand { get; set; }
         public string Model { get; set; }

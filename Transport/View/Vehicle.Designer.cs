@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label9 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.numericUpDownFuelTankCapacity = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownMaxSpeed = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownStartingSpeed = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
+            this.submitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFuelConsumption)).BeginInit();
@@ -56,19 +56,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStartingSpeed)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.titleLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 43);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "You entered data about 0 out of 5 vehicles";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.titleLabel.Location = new System.Drawing.Point(3, 0);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(392, 43);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "You entered data about 0 out of 5 vehicles";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -78,9 +78,9 @@
             this.tableLayoutPanel1.AutoScroll = true;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.titleLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.submitButton, 0, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -319,16 +319,17 @@
             this.numericUpDownStartingSpeed.Size = new System.Drawing.Size(230, 20);
             this.numericUpDownStartingSpeed.TabIndex = 17;
             // 
-            // button1
+            // submitButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(3, 397);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(392, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Next(Ok)";
-            this.button1.UseVisualStyleBackColor = true;
+            this.submitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.submitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.submitButton.Location = new System.Drawing.Point(3, 397);
+            this.submitButton.Name = "submitButton";
+            this.submitButton.Size = new System.Drawing.Size(392, 30);
+            this.submitButton.TabIndex = 2;
+            this.submitButton.Text = "Next(Ok)";
+            this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // Vehicle
             // 
@@ -352,7 +353,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label9;
@@ -371,6 +372,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownFuelTankCapacity;
         private System.Windows.Forms.NumericUpDown numericUpDownMaxSpeed;
         private System.Windows.Forms.NumericUpDown numericUpDownStartingSpeed;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button submitButton;
     }
 }

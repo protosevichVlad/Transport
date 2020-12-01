@@ -76,7 +76,9 @@ namespace Transport
             numericUpDownFuelConsumption.Value = 0;
             numericUpDownFuelTankCapacity.Value = 0;
             numericUpDownMaxSpeed.Value = 0;
-            numericUpDownStartingSpeed.Value = 0;
+            numericUpDownStartingSpeed.Value = 0; 
+
+            titleLabel.Text = $"You entered data about {index} out of 5 vehicles";
         }
 
         public void SetFuel(List<Model.Fuel> fuels)
@@ -88,6 +90,11 @@ namespace Transport
             }
 
             comboBoxFuelType.Items.AddRange(stringFuel);
+        }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            _presentor.Submit();
         }
     }
 }

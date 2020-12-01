@@ -50,6 +50,7 @@
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Fuel.cs" />
     <Compile Include="Model\Vehicle.cs" />
+    <Compile Include="Model\VehicleInForm.cs" />
     <Compile Include="Presenter\FuelPresenter.cs" />
     <Compile Include="Presenter\TransportPresenter.cs" />
     <Compile Include="Presenter\VehiclePresentor.cs" />
@@ -81,7 +82,7 @@
     <Compile Include="View\Vehicle.Designer.cs">
       <DependentUpon>Vehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\TransportView.cs" />
+    <Compile Include="View\ITransportView.cs" />
     <EmbeddedResource Include="View\Transport.resx">
       <DependentUpon>Transport.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,7 +90,7 @@
       <DependentUpon>Fuel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -122,6 +123,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\Road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car--v2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
