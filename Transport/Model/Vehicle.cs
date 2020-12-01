@@ -1,0 +1,164 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Transport.Model
+{
+    class Vehicle
+    {
+        public string VehicleBrand { get; set; }
+        public string Model { get; set; }
+        public string Type { get; set; }
+        public Fuel Fuel { get; set; } 
+        public int QuantityOfDoors { get; set; } = 0;
+        public int QuantityOfOpenedDoors { get; set; } = 0;
+        public int QuantityOfWheels { get; set; } = 0;
+        public int QuantityOfPassengers { get; set; } = 0;
+        public int Payload { get; set; } = 0;
+        public int MaxSpeed { get; set; } = 0;
+        public int StartSpeed { get; set; } = 0;
+        public int CurrentSpeed { get; set; } = 0;
+        public int FuelTankCapasity { get; set; } = 0;
+        public double CurrentFuelLevel { get; set; } = 0;
+        public double FuelConsumption { get; set; } = 0;
+        public string Propeller { get; set; } = "physical";
+        public string Purpose { get; set; } = ""; //  public / passenger / cargo
+        public bool Signalings { get; set; } = false;
+        public bool BrakingSystem { get; set; } = false;
+        public bool Headlights { get; set; } = false;
+        public bool Trailer { get; set; } = false;
+        public bool InMotion { get; set; } = false;
+        public string LogString { get; private set; } = "";
+
+        protected void ShowMessage(string message)
+        {
+            string logString = $"{DateTime.Now.ToString()}: {VehicleBrand} {Model} - {message}";
+            Console.WriteLine(logString);
+            LogString += logString + "\n";
+        }
+        
+        public void OpenDoor()
+        {
+            if (QuantityOfDoors > 0)
+            {
+                if (QuantityOfOpenedDoors < QuantityOfDoors)
+                {
+                    ShowMessage("The door is open.");
+                    QuantityOfOpenedDoors++;
+                }
+                else
+                {
+                    ShowMessage("All doors are open.");
+                }
+            }
+            else
+            {
+                ShowMessage("Doors are missing.");
+            }
+        }
+
+        public void CloseDoor()
+        {
+            if (QuantityOfDoors > 0)
+            {
+                if (QuantityOfOpenedDoors > 0)
+                {
+                    ShowMessage("The door is closed.");
+                    QuantityOfOpenedDoors--;
+                }
+                else
+                {
+                    ShowMessage("All doors are closed.");
+                }
+            }
+            else
+            {
+                ShowMessage("Doors are missing.");
+            }
+        }
+
+        public void Launch()
+        {
+            if (!InMotion)
+            {
+                if (CurrentFuelLevel > 0)
+                {
+                    ShowMessage("The movement started.");
+                    CurrentSpeed = StartSpeed;
+                    InMotion = true;
+                }
+                else
+                {
+                    ShowMessage("No fuel no movement possible.");
+                    InMotion = false;
+                }
+            }
+            else
+            {
+                ShowMessage("The vehicle is already moving.");
+            }
+        }
+
+        public void Stop()
+        {
+            if (InMotion)
+            {
+                ShowMessage("The vehicle is stopped");
+                CurrentSpeed = 0;
+                InMotion = false;
+            }
+            else
+            {
+                ShowMessage("The vehicle has already been stopped.");
+            }
+        }
+
+        public void ChangeTheSpeedTo(int deltaSpeed)
+        {
+            if (CurrentSpeed == 0 && deltaSpeed > 0)
+            {
+                Launch();
+            }
+
+            if (CurrentSpeed + deltaSpeed <= MaxSpeed && CurrentSpeed + deltaSpeed >= 0)
+            {
+                CurrentSpeed += deltaSpeed;
+                ShowMessage($"The current speed has changed to {deltaSpeed}. Current speed is now {CurrentSpeed}");
+            }
+            else if (CurrentSpeed == MaxSpeed)
+            {
+                ShowMessage("The vehicle is moving at maximum speed.");
+            }
+            else if (CurrentSpeed == 0)
+            {
+                ShowMessage("The vehicle cannot slow down because it is stopped");
+            }
+            else if (CurrentSpeed + deltaSpeed > MaxSpeed) 
+            {
+                CurrentSpeed = MaxSpeed;
+                ShowMessage($"The current speed has changed to {MaxSpeed - CurrentSpeed}. Current speed is now {MaxSpeed}");
+            }
+            else if (CurrentSpeed - deltaSpeed < 0)
+            {
+                CurrentSpeed = 0;
+                ShowMessage($"The current speed has changed to {CurrentSpeed}. Current speed is now 0");
+            }
+        }
+
+        public void Refuel(int quantityFuel)
+        {
+            if (CurrentFuelLevel + quantityFuel <= FuelTankCapasity)
+            {
+                CurrentFuelLevel += quantityFuel;
+                ShowMessage($"The vehicle is filled with {quantityFuel} liters. The tank is {CurrentFuelLevel} liters full");
+            }
+            else
+            {
+                ShowMessage($"The tank is full.");
+                CurrentFuelLevel = FuelTankCapasity;
+            }
+        }
+    }
+}
