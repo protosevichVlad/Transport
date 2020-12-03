@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.titleLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -48,12 +49,14 @@
             this.numericUpDownMaxSpeed = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownStartingSpeed = new System.Windows.Forms.NumericUpDown();
             this.submitButton = new System.Windows.Forms.Button();
+            this.appErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFuelConsumption)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFuelTankCapacity)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxSpeed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStartingSpeed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appErrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -95,9 +98,10 @@
             this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.43305F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.56695F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 5);
@@ -135,7 +139,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(3, 307);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(150, 20);
+            this.label9.Size = new System.Drawing.Size(171, 20);
             this.label9.TabIndex = 24;
             this.label9.Text = "Starting speed:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,7 +151,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(3, 263);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(150, 20);
+            this.label8.Size = new System.Drawing.Size(171, 20);
             this.label8.TabIndex = 23;
             this.label8.Text = "Maximum speed:";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -159,7 +163,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.Location = new System.Drawing.Point(3, 221);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(150, 20);
+            this.label7.Size = new System.Drawing.Size(171, 20);
             this.label7.TabIndex = 22;
             this.label7.Text = "Fuel tank capacity:";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -171,7 +175,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(3, 179);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 20);
+            this.label6.Size = new System.Drawing.Size(171, 20);
             this.label6.TabIndex = 21;
             this.label6.Text = "Fuel consumption:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -183,7 +187,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(3, 137);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 20);
+            this.label5.Size = new System.Drawing.Size(171, 20);
             this.label5.TabIndex = 20;
             this.label5.Text = "Fuel type:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -195,7 +199,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(3, 95);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 20);
+            this.label4.Size = new System.Drawing.Size(171, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Type:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,7 +211,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(3, 53);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 20);
+            this.label3.Size = new System.Drawing.Size(171, 20);
             this.label3.TabIndex = 18;
             this.label3.Text = "Model:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -219,7 +223,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.Location = new System.Drawing.Point(3, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 20);
+            this.label2.Size = new System.Drawing.Size(171, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Vehicle brand:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,39 +231,43 @@
             // textBoxBrand
             // 
             this.textBoxBrand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBrand.Location = new System.Drawing.Point(159, 11);
+            this.textBoxBrand.Location = new System.Drawing.Point(180, 11);
             this.textBoxBrand.Name = "textBoxBrand";
-            this.textBoxBrand.Size = new System.Drawing.Size(230, 20);
+            this.textBoxBrand.Size = new System.Drawing.Size(183, 20);
             this.textBoxBrand.TabIndex = 11;
+            this.textBoxBrand.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxBrand_Validating);
             // 
             // textBoxModel
             // 
             this.textBoxModel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxModel.Location = new System.Drawing.Point(159, 53);
+            this.textBoxModel.Location = new System.Drawing.Point(180, 53);
             this.textBoxModel.Name = "textBoxModel";
-            this.textBoxModel.Size = new System.Drawing.Size(230, 20);
+            this.textBoxModel.Size = new System.Drawing.Size(183, 20);
             this.textBoxModel.TabIndex = 12;
+            this.textBoxModel.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxModel_Validating);
             // 
             // comboBoxType
             // 
             this.comboBoxType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Items.AddRange(new object[] {
-            "Tank",
-            "Сar"});
-            this.comboBoxType.Location = new System.Drawing.Point(159, 94);
+            "Car"});
+            this.comboBoxType.Location = new System.Drawing.Point(180, 94);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(230, 21);
+            this.comboBoxType.Size = new System.Drawing.Size(183, 21);
             this.comboBoxType.TabIndex = 13;
             // 
             // comboBoxFuelType
             // 
             this.comboBoxFuelType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxFuelType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxFuelType.FormattingEnabled = true;
-            this.comboBoxFuelType.Location = new System.Drawing.Point(159, 136);
+            this.comboBoxFuelType.Location = new System.Drawing.Point(180, 136);
             this.comboBoxFuelType.Name = "comboBoxFuelType";
-            this.comboBoxFuelType.Size = new System.Drawing.Size(230, 21);
+            this.comboBoxFuelType.Size = new System.Drawing.Size(183, 21);
             this.comboBoxFuelType.TabIndex = 14;
+            this.comboBoxFuelType.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxFuelType_Validating);
             // 
             // numericUpDownFuelConsumption
             // 
@@ -270,54 +278,55 @@
             0,
             0,
             65536});
-            this.numericUpDownFuelConsumption.Location = new System.Drawing.Point(159, 179);
+            this.numericUpDownFuelConsumption.Location = new System.Drawing.Point(180, 179);
             this.numericUpDownFuelConsumption.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
             this.numericUpDownFuelConsumption.Name = "numericUpDownFuelConsumption";
-            this.numericUpDownFuelConsumption.Size = new System.Drawing.Size(230, 20);
+            this.numericUpDownFuelConsumption.Size = new System.Drawing.Size(183, 20);
             this.numericUpDownFuelConsumption.TabIndex = 15;
             // 
             // numericUpDownFuelTankCapacity
             // 
             this.numericUpDownFuelTankCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownFuelTankCapacity.Location = new System.Drawing.Point(159, 221);
+            this.numericUpDownFuelTankCapacity.Location = new System.Drawing.Point(180, 221);
             this.numericUpDownFuelTankCapacity.Maximum = new decimal(new int[] {
             9999,
             0,
             0,
             0});
             this.numericUpDownFuelTankCapacity.Name = "numericUpDownFuelTankCapacity";
-            this.numericUpDownFuelTankCapacity.Size = new System.Drawing.Size(230, 20);
+            this.numericUpDownFuelTankCapacity.Size = new System.Drawing.Size(183, 20);
             this.numericUpDownFuelTankCapacity.TabIndex = 16;
             // 
             // numericUpDownMaxSpeed
             // 
             this.numericUpDownMaxSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownMaxSpeed.Location = new System.Drawing.Point(159, 263);
+            this.numericUpDownMaxSpeed.Location = new System.Drawing.Point(180, 263);
             this.numericUpDownMaxSpeed.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
             this.numericUpDownMaxSpeed.Name = "numericUpDownMaxSpeed";
-            this.numericUpDownMaxSpeed.Size = new System.Drawing.Size(230, 20);
+            this.numericUpDownMaxSpeed.Size = new System.Drawing.Size(183, 20);
             this.numericUpDownMaxSpeed.TabIndex = 17;
             // 
             // numericUpDownStartingSpeed
             // 
             this.numericUpDownStartingSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.numericUpDownStartingSpeed.Location = new System.Drawing.Point(159, 307);
+            this.numericUpDownStartingSpeed.Location = new System.Drawing.Point(180, 307);
             this.numericUpDownStartingSpeed.Maximum = new decimal(new int[] {
             999,
             0,
             0,
             0});
             this.numericUpDownStartingSpeed.Name = "numericUpDownStartingSpeed";
-            this.numericUpDownStartingSpeed.Size = new System.Drawing.Size(230, 20);
+            this.numericUpDownStartingSpeed.Size = new System.Drawing.Size(183, 20);
             this.numericUpDownStartingSpeed.TabIndex = 17;
+            this.numericUpDownStartingSpeed.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDownStartingSpeed_Validating);
             // 
             // submitButton
             // 
@@ -330,6 +339,10 @@
             this.submitButton.Text = "Next(Ok)";
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            // 
+            // appErrorProvider
+            // 
+            this.appErrorProvider.ContainerControl = this;
             // 
             // Vehicle
             // 
@@ -347,6 +360,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFuelTankCapacity)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMaxSpeed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStartingSpeed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appErrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,5 +387,6 @@
         private System.Windows.Forms.NumericUpDown numericUpDownMaxSpeed;
         private System.Windows.Forms.NumericUpDown numericUpDownStartingSpeed;
         private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.ErrorProvider appErrorProvider;
     }
 }

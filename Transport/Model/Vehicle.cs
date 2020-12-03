@@ -17,9 +17,9 @@ namespace Transport.Model
         public int QuantityOfWheels { get; set; } = 0;
         public int QuantityOfPassengers { get; set; } = 0;
         public int Payload { get; set; } = 0;
-        public int MaxSpeed { get; set; } = 0;
-        public int StartSpeed { get; set; } = 0;
-        public int CurrentSpeed { get; set; } = 0;
+        public double MaxSpeed { get; set; } = 0;
+        public double StartSpeed { get; set; } = 0;
+        public double CurrentSpeed { get; set; } = 0;
         public int FuelTankCapasity { get; set; } = 0;
         public double CurrentFuelLevel { get; set; } = 0;
         public double FuelConsumption { get; set; } = 0;
@@ -31,8 +31,23 @@ namespace Transport.Model
         public bool Trailer { get; set; } = false;
         public bool InMotion { get; set; } = false;
         public string LogString { get; private set; } = "";
+        public double PassedWay { get; set; } = 0;
+        public double Acceleration { get; set; } = 0;
+        public double CurrentSpeedKmInH
+        {
+            get
+            {
+                return CurrentSpeed * 3.6;
+            }
 
-        protected void ShowMessage(string message)
+            set
+            {
+                CurrentSpeed = value / 3.6;
+            }
+        }
+        public DateTime Time { get; set; }
+
+        private void ShowMessage(string message)
         {
             string logString = $"{DateTime.Now.ToString()}: {VehicleBrand} {Model} - {message}";
             Console.WriteLine(logString);
@@ -88,6 +103,7 @@ namespace Transport.Model
                     ShowMessage("The movement started.");
                     CurrentSpeed = StartSpeed;
                     InMotion = true;
+                    Acceleration = (MaxSpeed * MaxSpeed - StartSpeed * StartSpeed) / (FuelTankCapasity / FuelConsumption * 100000.0);
                 }
                 else
                 {
@@ -115,7 +131,7 @@ namespace Transport.Model
             }
         }
 
-        public void ChangeTheSpeedTo(int deltaSpeed)
+        public void ChangeTheSpeedTo(double deltaSpeed)
         {
             if (CurrentSpeed == 0 && deltaSpeed > 0)
             {
@@ -127,14 +143,6 @@ namespace Transport.Model
                 CurrentSpeed += deltaSpeed;
                 ShowMessage($"The current speed has changed to {deltaSpeed}. Current speed is now {CurrentSpeed}");
             }
-            else if (CurrentSpeed == MaxSpeed)
-            {
-                ShowMessage("The vehicle is moving at maximum speed.");
-            }
-            else if (CurrentSpeed == 0)
-            {
-                ShowMessage("The vehicle cannot slow down because it is stopped");
-            }
             else if (CurrentSpeed + deltaSpeed > MaxSpeed) 
             {
                 CurrentSpeed = MaxSpeed;
@@ -144,6 +152,14 @@ namespace Transport.Model
             {
                 CurrentSpeed = 0;
                 ShowMessage($"The current speed has changed to {CurrentSpeed}. Current speed is now 0");
+            }
+            else if (CurrentSpeed == MaxSpeed)
+            {
+                ShowMessage("The vehicle is moving at maximum speed.");
+            }
+            else if (CurrentSpeed == 0)
+            {
+                ShowMessage("The vehicle cannot slow down because it is stopped");
             }
         }
 
@@ -159,6 +175,20 @@ namespace Transport.Model
                 ShowMessage($"The tank is full.");
                 CurrentFuelLevel = FuelTankCapasity;
             }
+        }
+
+        public void Shift(double time)
+        {
+            Time = Time.AddSeconds((int)time);
+
+            double oldSpeed = CurrentSpeed;
+            ChangeTheSpeedTo(Acceleration * time);
+
+            double deltaWay = (int)((oldSpeed * time) + (CurrentSpeed * time / 2)) / 1000.0;
+            PassedWay += deltaWay;
+            CurrentFuelLevel -= FuelConsumption  / 100.0 * deltaWay;
+            
+            ShowMessage($"\tCS: {CurrentSpeed};\tdeltaWay: {deltaWay}; \tPassedWay: {PassedWay}; \t FuelLavel: {CurrentFuelLevel}");
         }
     }
 }

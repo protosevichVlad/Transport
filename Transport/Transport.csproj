@@ -48,7 +48,11 @@
   <ItemGroup>
     <Compile Include="Model\ApplicationContext.cs" />
     <Compile Include="Model\Car.cs" />
+    <Compile Include="Model\FactoryVehicles.cs" />
     <Compile Include="Model\Fuel.cs" />
+    <Compile Include="Model\InformationOnForm.cs" />
+    <Compile Include="Model\Scooter.cs" />
+    <Compile Include="Model\Ufo.cs" />
     <Compile Include="Model\Vehicle.cs" />
     <Compile Include="Model\VehicleInForm.cs" />
     <Compile Include="Presenter\FuelPresenter.cs" />
@@ -129,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scooter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UFO.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

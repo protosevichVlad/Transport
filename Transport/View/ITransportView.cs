@@ -15,5 +15,7 @@ namespace Transport.View
         void CreateFuels();
         void ShowAllVehicles();
         List<PictureBox> GetPickureBoxWithVeclise();
+        List<Label> GetLabels();
+        List<ProgressBar> GetProgressBars();
     }
 }

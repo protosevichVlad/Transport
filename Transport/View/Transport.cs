@@ -103,5 +103,49 @@ namespace Transport
         {
             _presenter.Start();
         }
+
+        public List<Label> GetLabels()
+        {
+            List<Label> labels = new List<Label>();
+            labels.Add(label1);
+            labels.Add(label2);
+            labels.Add(label3);
+            labels.Add(label4);
+            labels.Add(label5);
+            labels.Add(label6);
+            labels.Add(label7);
+            labels.Add(label8);
+            labels.Add(label9);
+            labels.Add(label10);
+            labels.Add(label11);
+            labels.Add(label12);
+            labels.Add(label13);
+            labels.Add(label14);
+            labels.Add(label15);
+            labels.Add(label16);
+            labels.Add(label17);
+            labels.Add(label18);
+            labels.Add(label19);
+            labels.Add(label20);
+           
+            return labels;
+        }
+
+        public List<ProgressBar> GetProgressBars()
+        {
+            List<ProgressBar> progressBars = new List<ProgressBar>();
+            progressBars.Add(progressBar1);
+            progressBars.Add(progressBar2);
+            progressBars.Add(progressBar3);
+            progressBars.Add(progressBar4);
+            progressBars.Add(progressBar5);
+
+            return progressBars;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
