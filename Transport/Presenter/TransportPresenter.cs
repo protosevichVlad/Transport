@@ -69,5 +69,10 @@ namespace Transport.Presenter
         {
             ApplicationContext.VehicleInForms.ForEach(v => v.Launch());
         }
+
+        internal void Stop()
+        {
+            ApplicationContext.VehicleInForms.ForEach(v => v.Stop());
+        }
     }
 }

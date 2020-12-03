@@ -56,8 +56,10 @@
     <Compile Include="Model\Vehicle.cs" />
     <Compile Include="Model\VehicleInForm.cs" />
     <Compile Include="Presenter\FuelPresenter.cs" />
+    <Compile Include="Presenter\ShowLogsPresenter.cs" />
     <Compile Include="Presenter\TransportPresenter.cs" />
     <Compile Include="Presenter\VehiclePresentor.cs" />
+    <Compile Include="View\IShowLogsView.cs" />
     <Compile Include="View\IVehicleView.cs" />
     <Compile Include="View\IFuelView.cs" />
     <Compile Include="View\Transport.cs">

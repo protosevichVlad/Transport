@@ -30,7 +30,7 @@ namespace Transport.Model
         public bool Headlights { get; set; } = false;
         public bool Trailer { get; set; } = false;
         public bool InMotion { get; set; } = false;
-        public string LogString { get; private set; } = "";
+        public List<string> LogString { get; private set; } = new List<string>();
         public double PassedWay { get; set; } = 0;
         public double Acceleration { get; set; } = 0;
         public double CurrentSpeedKmInH
@@ -51,7 +51,7 @@ namespace Transport.Model
         {
             string logString = $"{DateTime.Now.ToString()}: {VehicleBrand} {Model} - {message}";
             Console.WriteLine(logString);
-            LogString += logString + "\n";
+            LogString.Add(logString);
         }
         
         public void OpenDoor()
@@ -185,10 +185,16 @@ namespace Transport.Model
             ChangeTheSpeedTo(Acceleration * time);
 
             double deltaWay = (int)((oldSpeed * time) + (CurrentSpeed * time / 2)) / 1000.0;
+
+            if (Math.Floor(PassedWay / 50.0) < Math.Floor((PassedWay + deltaWay) / 50.0))
+            {
+                ShowMessage($"\tCurrentSpeed: {CurrentSpeed};\tPassedWay: {PassedWay}; \t FuelLavel: {CurrentFuelLevel}");
+            }
+
             PassedWay += deltaWay;
             CurrentFuelLevel -= FuelConsumption  / 100.0 * deltaWay;
             
-            ShowMessage($"\tCS: {CurrentSpeed};\tdeltaWay: {deltaWay}; \tPassedWay: {PassedWay}; \t FuelLavel: {CurrentFuelLevel}");
+            
         }
     }
 }

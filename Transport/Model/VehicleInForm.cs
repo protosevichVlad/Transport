@@ -42,7 +42,7 @@ namespace Transport.Model
             launchThread.Start(); // запускаем поток
         }
 
-        public void Spot()
+        public void Stop()
         {
             Vehicle.Stop();
             launchThread.Abort();
