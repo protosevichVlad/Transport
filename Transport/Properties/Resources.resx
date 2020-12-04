@@ -121,14 +121,41 @@
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Bicycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bicycle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Car" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\car--v2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="HorseDrawnCarriage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HorseDrawnCarriage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loader.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Motorcycle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Motorcycle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Road" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Images\Road.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Scooter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Scooter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tank" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tank.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Tram" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tram.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trolleybus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trolleybus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="UFO" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UFO.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

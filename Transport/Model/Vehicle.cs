@@ -33,6 +33,7 @@ namespace Transport.Model
         public List<string> LogString { get; private set; } = new List<string>();
         public double PassedWay { get; set; } = 0;
         public double Acceleration { get; set; } = 0;
+        public DateTime Time { get; set; }
         public double CurrentSpeedKmInH
         {
             get
@@ -45,11 +46,10 @@ namespace Transport.Model
                 CurrentSpeed = value / 3.6;
             }
         }
-        public DateTime Time { get; set; }
 
         private void ShowMessage(string message)
         {
-            string logString = $"{DateTime.Now.ToString()}: {VehicleBrand} {Model} - {message}";
+            string logString = $"{Time.ToString("HH:mm:ss")}: {VehicleBrand} {Model} - {message}";
             Console.WriteLine(logString);
             LogString.Add(logString);
         }

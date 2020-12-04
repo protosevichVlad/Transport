@@ -79,6 +79,43 @@ namespace Transport.Model
             {
                 return (Image)Properties.Resources.Scooter;
             }
+            else if (Vehicle.Type == "Truck")
+            {
+                return (Image)Properties.Resources.Truck;
+            }
+            else if (Vehicle.Type == "Loader")
+            {
+                return (Image)Properties.Resources.Loader;
+            }
+            else if (Vehicle.Type == "Bus")
+            {
+                return (Image)Properties.Resources.Bus;
+            }
+            else if (Vehicle.Type == "Trolleybus")
+            {
+                return (Image)Properties.Resources.Trolleybus;
+            }
+            else if (Vehicle.Type == "Tram")
+            {
+                return (Image)Properties.Resources.Tram;
+            }
+            else if (Vehicle.Type == "Motorcycle")
+            {
+                return (Image)Properties.Resources.Motorcycle;
+            }
+            else if (Vehicle.Type == "HorseDrawnCarriage")
+            {
+                return (Image)Properties.Resources.HorseDrawnCarriage;
+            }
+            else if (Vehicle.Type == "Bicycle")
+            {
+                return (Image)Properties.Resources.Bicycle;
+            }
+            else if (Vehicle.Type == "Tank")
+            {
+                return (Image)Properties.Resources.Tank;
+            }
+
             return (Image)Properties.Resources.UFO;
         }
     }

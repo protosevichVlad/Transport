@@ -101,7 +101,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.43305F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.56695F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.label8, 0, 6);
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 5);
@@ -233,7 +233,7 @@
             this.textBoxBrand.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBrand.Location = new System.Drawing.Point(180, 11);
             this.textBoxBrand.Name = "textBoxBrand";
-            this.textBoxBrand.Size = new System.Drawing.Size(183, 20);
+            this.textBoxBrand.Size = new System.Drawing.Size(182, 20);
             this.textBoxBrand.TabIndex = 11;
             this.textBoxBrand.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxBrand_Validating);
             // 
@@ -242,7 +242,7 @@
             this.textBoxModel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxModel.Location = new System.Drawing.Point(180, 53);
             this.textBoxModel.Name = "textBoxModel";
-            this.textBoxModel.Size = new System.Drawing.Size(183, 20);
+            this.textBoxModel.Size = new System.Drawing.Size(182, 20);
             this.textBoxModel.TabIndex = 12;
             this.textBoxModel.Validating += new System.ComponentModel.CancelEventHandler(this.textBoxModel_Validating);
             // 
@@ -252,10 +252,20 @@
             this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Items.AddRange(new object[] {
-            "Car"});
+            "Car",
+            "Scooter",
+            "Truck",
+            "Loader",
+            "Bus",
+            "Trolleybus",
+            "Tram",
+            "Motorcycle",
+            "HorseDrawnCarriage",
+            "Bicycle",
+            "Tank"});
             this.comboBoxType.Location = new System.Drawing.Point(180, 94);
             this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(183, 21);
+            this.comboBoxType.Size = new System.Drawing.Size(182, 21);
             this.comboBoxType.TabIndex = 13;
             // 
             // comboBoxFuelType
@@ -265,7 +275,7 @@
             this.comboBoxFuelType.FormattingEnabled = true;
             this.comboBoxFuelType.Location = new System.Drawing.Point(180, 136);
             this.comboBoxFuelType.Name = "comboBoxFuelType";
-            this.comboBoxFuelType.Size = new System.Drawing.Size(183, 21);
+            this.comboBoxFuelType.Size = new System.Drawing.Size(182, 21);
             this.comboBoxFuelType.TabIndex = 14;
             this.comboBoxFuelType.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxFuelType_Validating);
             // 
@@ -285,7 +295,7 @@
             0,
             0});
             this.numericUpDownFuelConsumption.Name = "numericUpDownFuelConsumption";
-            this.numericUpDownFuelConsumption.Size = new System.Drawing.Size(183, 20);
+            this.numericUpDownFuelConsumption.Size = new System.Drawing.Size(182, 20);
             this.numericUpDownFuelConsumption.TabIndex = 15;
             // 
             // numericUpDownFuelTankCapacity
@@ -298,7 +308,7 @@
             0,
             0});
             this.numericUpDownFuelTankCapacity.Name = "numericUpDownFuelTankCapacity";
-            this.numericUpDownFuelTankCapacity.Size = new System.Drawing.Size(183, 20);
+            this.numericUpDownFuelTankCapacity.Size = new System.Drawing.Size(182, 20);
             this.numericUpDownFuelTankCapacity.TabIndex = 16;
             // 
             // numericUpDownMaxSpeed
@@ -311,7 +321,7 @@
             0,
             0});
             this.numericUpDownMaxSpeed.Name = "numericUpDownMaxSpeed";
-            this.numericUpDownMaxSpeed.Size = new System.Drawing.Size(183, 20);
+            this.numericUpDownMaxSpeed.Size = new System.Drawing.Size(182, 20);
             this.numericUpDownMaxSpeed.TabIndex = 17;
             // 
             // numericUpDownStartingSpeed
@@ -324,7 +334,7 @@
             0,
             0});
             this.numericUpDownStartingSpeed.Name = "numericUpDownStartingSpeed";
-            this.numericUpDownStartingSpeed.Size = new System.Drawing.Size(183, 20);
+            this.numericUpDownStartingSpeed.Size = new System.Drawing.Size(182, 20);
             this.numericUpDownStartingSpeed.TabIndex = 17;
             this.numericUpDownStartingSpeed.Validating += new System.ComponentModel.CancelEventHandler(this.numericUpDownStartingSpeed_Validating);
             // 

@@ -47,11 +47,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\ApplicationContext.cs" />
+    <Compile Include="Model\Bicycle.cs" />
+    <Compile Include="Model\Bus.cs" />
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\FactoryVehicles.cs" />
     <Compile Include="Model\Fuel.cs" />
+    <Compile Include="Model\HorseDrawnCarriage.cs" />
     <Compile Include="Model\InformationOnForm.cs" />
+    <Compile Include="Model\Loader.cs" />
+    <Compile Include="Model\Motorcycle.cs" />
     <Compile Include="Model\Scooter.cs" />
+    <Compile Include="Model\Tank.cs" />
+    <Compile Include="Model\Tram.cs" />
+    <Compile Include="Model\Trolleybus.cs" />
+    <Compile Include="Model\Truck.cs" />
     <Compile Include="Model\Ufo.cs" />
     <Compile Include="Model\Vehicle.cs" />
     <Compile Include="Model\VehicleInForm.cs" />
@@ -141,6 +150,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\UFO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Truck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Loader.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Motorcycle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HorseDrawnCarriage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bicycle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trolleybus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
