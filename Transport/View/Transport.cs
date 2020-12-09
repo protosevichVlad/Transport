@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Transport.View;
-using Transport.Presenter;
+using View;
+using Presenter;
 
 namespace Transport
 {
@@ -79,12 +73,15 @@ namespace Transport
 
         private void createFuelButton_Click(object sender, EventArgs e)
         {
-            _presenter.OpenFormWithCreatingFuel();
+            Fuel fuel = new Fuel();
+            fuel.ShowDialog();
         }
 
         private void createVechiclesButton_Click(object sender, EventArgs e)
         {
-            _presenter.OpenFormWithCreatingVehicles();
+            Vehicle vehicle = new Vehicle();
+            vehicle.FormClosed += _presenter.ShowVehicles;
+            vehicle.ShowDialog();
         }
 
         public List<PictureBox> GetPickureBoxWithVeclise()

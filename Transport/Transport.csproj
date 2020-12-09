@@ -46,50 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\ApplicationContext.cs" />
-    <Compile Include="Model\Bicycle.cs" />
-    <Compile Include="Model\Bus.cs" />
-    <Compile Include="Model\Car.cs" />
-    <Compile Include="Model\FactoryVehicles.cs" />
-    <Compile Include="Model\Fuel.cs" />
-    <Compile Include="Model\HorseDrawnCarriage.cs" />
-    <Compile Include="Model\InformationOnForm.cs" />
-    <Compile Include="Model\Loader.cs" />
-    <Compile Include="Model\Motorcycle.cs" />
-    <Compile Include="Model\Scooter.cs" />
-    <Compile Include="Model\Tank.cs" />
-    <Compile Include="Model\Tram.cs" />
-    <Compile Include="Model\Trolleybus.cs" />
-    <Compile Include="Model\Truck.cs" />
-    <Compile Include="Model\Ufo.cs" />
-    <Compile Include="Model\Vehicle.cs" />
-    <Compile Include="Model\VehicleInForm.cs" />
-    <Compile Include="Presenter\FuelPresenter.cs" />
-    <Compile Include="Presenter\ShowLogsPresenter.cs" />
-    <Compile Include="Presenter\TransportPresenter.cs" />
-    <Compile Include="Presenter\VehiclePresentor.cs" />
-    <Compile Include="View\IShowLogsView.cs" />
-    <Compile Include="View\IVehicleView.cs" />
-    <Compile Include="View\IFuelView.cs" />
-    <Compile Include="View\Transport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\Transport.Designer.cs">
-      <DependentUpon>Transport.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Fuel.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Fuel.Designer.cs">
       <DependentUpon>Fuel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\ShowLogs.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ShowLogs.Designer.cs">
       <DependentUpon>ShowLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Transport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Transport.Designer.cs">
+      <DependentUpon>Transport.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Vehicle.cs">
       <SubType>Form</SubType>
@@ -97,13 +72,6 @@
     <Compile Include="View\Vehicle.Designer.cs">
       <DependentUpon>Vehicle.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ITransportView.cs" />
-    <EmbeddedResource Include="View\Transport.resx">
-      <DependentUpon>Transport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\Fuel.resx">
-      <DependentUpon>Fuel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -114,8 +82,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\Fuel.resx">
+      <DependentUpon>Fuel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\ShowLogs.resx">
       <DependentUpon>ShowLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Transport.resx">
+      <DependentUpon>Transport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Vehicle.resx">
       <DependentUpon>Vehicle.cs</DependentUpon>
@@ -135,9 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Road.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Images\Road.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\car--v2.png" />
@@ -177,6 +148,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Trolleybus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Presenter\Presenter.csproj">
+      <Project>{623652b0-313a-4d24-874a-f1c2f65542ee}</Project>
+      <Name>Presenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\View\View.csproj">
+      <Project>{93091c1f-23af-4163-947d-5a65e06ffda5}</Project>
+      <Name>View</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

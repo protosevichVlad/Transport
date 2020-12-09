@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Transport.View;
-using Transport.Model;
-using Transport.Presenter;
+using Presenter;
+using View;
 
 namespace Transport
 {
@@ -64,7 +58,7 @@ namespace Transport
 
         public int GetStartSpeedVehicle()
         {
-            return (int)numericUpDownStartingSpeed.Value;
+            return (int) numericUpDownStartingSpeed.Value;
         }
 
         public void NextPage(int index)
@@ -81,15 +75,9 @@ namespace Transport
             titleLabel.Text = $"You entered data about {index} out of 5 vehicles";
         }
 
-        public void SetFuel(List<Model.Fuel> fuels)
+        public void SetFuel(List<string> fuels)
         {
-            string[] stringFuel = new string[fuels.Count];
-            for (int i = 0; i < fuels.Count; i++)
-            {
-                stringFuel[i] = fuels[i].Name;
-            }
-
-            comboBoxFuelType.Items.AddRange(stringFuel);
+            comboBoxFuelType.Items.AddRange(fuels.ToArray());
         }
 
         private void submitButton_Click(object sender, EventArgs e)
