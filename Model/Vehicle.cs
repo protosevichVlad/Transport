@@ -50,7 +50,7 @@ namespace Model
 
         private void ShowMessage(string message)
         {
-            string logString = $"{Time.ToString("HH:mm:ss")}: {VehicleBrand} {Model} - {message}";
+            string logString = $"{Time.ToString("HH:mm:ss")} # {VehicleBrand} {Model} - {message}";
             Console.WriteLine(logString);
             LogString.Add(logString);
         }
@@ -194,8 +194,11 @@ namespace Model
 
             PassedWay += deltaWay;
             CurrentFuelLevel -= FuelConsumption  / 100.0 * deltaWay;
-            
-            
+
+            if (CurrentFuelLevel < 0)
+            {
+                CurrentFuelLevel = 0;
+            }
         }
     }
 }

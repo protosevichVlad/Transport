@@ -24,7 +24,7 @@ namespace Presenter
 
             ApplicationContext.Fuels = fuels;
 
-            _view.CloseForm();
+            _view.Close();
         }
 
         public void SetStartFuel()

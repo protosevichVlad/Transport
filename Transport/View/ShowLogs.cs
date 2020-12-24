@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using View;
 using Presenter;
+using Transport.View;
 
 namespace Transport
 {
@@ -51,6 +52,21 @@ namespace Transport
             {
                 exportTypes.Add("txt");
             }
+            
+            if (wordCheckBox.Checked == true)
+            {
+                exportTypes.Add("word");
+            }
+            
+            if (excelCheckBox.Checked == true)
+            {
+                exportTypes.Add("excel");
+            }
+            
+            if (windowsCheckBox.Checked == true)
+            {
+                exportTypes.Add("window");
+            }
 
             return exportTypes;
         }
@@ -68,9 +84,20 @@ namespace Transport
             return -1;
         }
 
+        public void OpenLog(List<string> logs)
+        {
+            Logs logsForm = new Logs(logs);
+            logsForm.ShowDialog();
+        }
+
         private void submitButton_Click(object sender, EventArgs e)
         {
             _presenter.Submit();
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

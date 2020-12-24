@@ -54,6 +54,12 @@
     <Compile Include="View\Fuel.Designer.cs">
       <DependentUpon>Fuel.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Logs.Designer.cs">
+      <DependentUpon>Logs.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ShowLogs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     </Compile>
     <EmbeddedResource Include="View\Fuel.resx">
       <DependentUpon>Fuel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Logs.resx">
+      <DependentUpon>Logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ShowLogs.resx">
       <DependentUpon>ShowLogs.cs</DependentUpon>
@@ -158,6 +167,9 @@
       <Project>{93091c1f-23af-4163-947d-5a65e06ffda5}</Project>
       <Name>View</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TRoad.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

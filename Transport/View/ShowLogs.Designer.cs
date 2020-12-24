@@ -33,17 +33,17 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.wordCheckBox = new System.Windows.Forms.CheckBox();
             this.submitButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.excelCheckBox = new System.Windows.Forms.CheckBox();
+            this.windowsCheckBox = new System.Windows.Forms.CheckBox();
+            this.txtCheckBox = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -112,16 +112,16 @@
             this.radioButton5.Text = "Vehicle5";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // wordCheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(3, 49);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(61, 21);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Word";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.wordCheckBox.AutoSize = true;
+            this.wordCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.wordCheckBox.Location = new System.Drawing.Point(3, 49);
+            this.wordCheckBox.Name = "wordCheckBox";
+            this.wordCheckBox.Size = new System.Drawing.Size(61, 21);
+            this.wordCheckBox.TabIndex = 5;
+            this.wordCheckBox.Text = "Word";
+            this.wordCheckBox.UseVisualStyleBackColor = true;
             // 
             // submitButton
             // 
@@ -199,9 +199,9 @@
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Controls.Add(this.checkBox2, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.checkBox3, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.checkBox1, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.excelCheckBox, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.windowsCheckBox, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.wordCheckBox, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.txtCheckBox, 0, 3);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(9, 19);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -214,27 +214,40 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(245, 187);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
-            // checkBox2
+            // excelCheckBox
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox2.Location = new System.Drawing.Point(3, 95);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(60, 21);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "Excel";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.excelCheckBox.AutoSize = true;
+            this.excelCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.excelCheckBox.Location = new System.Drawing.Point(3, 95);
+            this.excelCheckBox.Name = "excelCheckBox";
+            this.excelCheckBox.Size = new System.Drawing.Size(60, 21);
+            this.excelCheckBox.TabIndex = 6;
+            this.excelCheckBox.Text = "Excel";
+            this.excelCheckBox.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // windowsCheckBox
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox3.Location = new System.Drawing.Point(3, 3);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(87, 21);
-            this.checkBox3.TabIndex = 7;
-            this.checkBox3.Text = "In window";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.windowsCheckBox.AutoSize = true;
+            this.windowsCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.windowsCheckBox.Location = new System.Drawing.Point(3, 3);
+            this.windowsCheckBox.Name = "windowsCheckBox";
+            this.windowsCheckBox.Size = new System.Drawing.Size(87, 21);
+            this.windowsCheckBox.TabIndex = 7;
+            this.windowsCheckBox.Text = "In window";
+            this.windowsCheckBox.UseVisualStyleBackColor = true;
+            this.windowsCheckBox.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // txtCheckBox
+            // 
+            this.txtCheckBox.AutoSize = true;
+            this.txtCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.txtCheckBox.Location = new System.Drawing.Point(3, 141);
+            this.txtCheckBox.Name = "txtCheckBox";
+            this.txtCheckBox.Size = new System.Drawing.Size(41, 21);
+            this.txtCheckBox.TabIndex = 8;
+            this.txtCheckBox.Text = "txt";
+            this.txtCheckBox.UseVisualStyleBackColor = true;
+            this.txtCheckBox.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // tableLayoutPanel1
             // 
@@ -272,18 +285,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(513, 219);
             this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // txtCheckBox
-            // 
-            this.txtCheckBox.AutoSize = true;
-            this.txtCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtCheckBox.Location = new System.Drawing.Point(3, 141);
-            this.txtCheckBox.Name = "txtCheckBox";
-            this.txtCheckBox.Size = new System.Drawing.Size(41, 21);
-            this.txtCheckBox.TabIndex = 8;
-            this.txtCheckBox.Text = "txt";
-            this.txtCheckBox.UseVisualStyleBackColor = true;
-            this.txtCheckBox.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
-            // 
             // ShowLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,12 +314,12 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox wordCheckBox;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox windowsCheckBox;
+        private System.Windows.Forms.CheckBox excelCheckBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

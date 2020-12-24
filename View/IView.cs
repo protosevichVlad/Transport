@@ -1,7 +1,8 @@
 ﻿namespace View
 {
-    public class IView
+    public interface IView
     {
-        
+        void Show();
+        void Close();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace View
 {
-    public interface IVehicleView
+    public interface IVehicleView: IView
     {
         string GetBrandVehicle();
         string GetModelVehicle();
@@ -15,7 +15,5 @@ namespace View
 
         void SetFuel(List<string> fuels);
         void NextPage(int index);
-        void CloseForm();
-        
     }
 }

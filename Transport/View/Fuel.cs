@@ -52,11 +52,6 @@ namespace Transport
             _presenter.Submit();
         }
 
-        public void CloseForm()
-        {
-            this.Close();
-        }
-        
         public void SetFuels(List<string> fuelNames)
         {
             if (fuelNames.IndexOf("Diesel fuel") != -1)

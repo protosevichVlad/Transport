@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace View
 {
-    public interface ITransportView
+    public interface ITransportView: IView
     {
         void Start();
         void Stop();

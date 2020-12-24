@@ -35,16 +35,46 @@ namespace Presenter
                 _view.GetStartSpeedVehicle() / 3.6
             ));
 
-            Console.WriteLine(_view.GetTypeVehicle().Contains("Car"));
-            Console.WriteLine(_view.GetTypeVehicle());
-
             if (ApplicationContext.Vehicles.Count == 5)
             {
-                _view.CloseForm();
+                _view.Close();
                 return;
             }
 
             _view.NextPage(ApplicationContext.Vehicles.Count);
+        }
+
+        public string[] GetTypeByIndex(int index)
+        {
+            List<string> result = new List<string>();
+            result.AddRange(new string[]{ "Car", "Scooter", "Truck", "Loader", "Bus", "Trolleybus", "Tram", "Motorcycle", "HorseDrawnCarriage", "Bicycle", "Tank"});
+            switch (index)
+            {
+                case 1:
+                    result.Remove("Bicycle");
+                    result.Remove("Tank");
+                    result.Remove("HorseDrawnCarriage");
+                    result.Remove("Tram");
+                    break;
+
+                case 0:
+                    result.Remove("Tram");
+                    break;
+
+                case 2:
+                    result = new List<string>(new string[]{"Tram"});
+                    break;
+
+                default:
+                    result.Remove("Bicycle");
+                    result.Remove("Tank");
+                    result.Remove("Trolleybus");
+                    result.Remove("HorseDrawnCarriage");
+                    result.Remove("Tram");
+                    break;
+            }
+            
+            return result.ToArray();
         }
     }
 }

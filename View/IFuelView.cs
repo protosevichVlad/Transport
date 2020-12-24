@@ -2,10 +2,9 @@
 
 namespace View
 {
-    public interface IFuelView
+    public interface IFuelView: IView
     {
         List<string> GetListFuelNames();
-        void CloseForm();
         void SetFuels(List<string> fuelNames);
     }
 }

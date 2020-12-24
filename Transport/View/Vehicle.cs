@@ -16,11 +16,6 @@ namespace Transport
             _presentor = new VehiclePresentor(this);
         }
 
-        public void CloseForm()
-        {
-            this.Close();
-        }
-
         public string GetBrandVehicle()
         {
             return textBoxBrand.Text;
@@ -65,8 +60,8 @@ namespace Transport
         {
             textBoxBrand.Text = string.Empty;
             textBoxModel.Text = string.Empty;
-            comboBoxFuelType.ResetText();
-            comboBoxType.ResetText();
+            comboBoxType.Items.Clear();
+            comboBoxType.Items.AddRange(_presentor.GetTypeByIndex(index));
             numericUpDownFuelConsumption.Value = 0;
             numericUpDownFuelTankCapacity.Value = 0;
             numericUpDownMaxSpeed.Value = 0;
