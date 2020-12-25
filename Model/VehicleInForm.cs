@@ -32,8 +32,8 @@ namespace Model
             InformationOnForm.Time.Text = $"0 s";
             InformationOnForm.Speed.Text = "- km/h";
             InformationOnForm.PassedWay.Text = "- km";
-            InformationOnForm.FuelLevel.Maximum = Vehicle.FuelTankCapasity;
-            InformationOnForm.FuelLevel.Value = Vehicle.FuelTankCapasity;
+            InformationOnForm.FuelLevel.Maximum = Vehicle.FuelTankCapacity;
+            InformationOnForm.FuelLevel.Value = Vehicle.FuelTankCapacity;
         }
 
         public void Launch()
@@ -45,6 +45,7 @@ namespace Model
         public void Stop()
         {
             Vehicle.Stop();
+            InformationOnForm.Speed.Text = $"{Vehicle.CurrentSpeedKmInH:0.0} km/h";
             launchThread.Abort();
             launchThread.Join();
         }

@@ -1,26 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Model;
-
-namespace Model
+﻿namespace Model
 {
-    class Motorcycle : Vehicle
+    public class Motorcycle : Vehicle
     {
         public Motorcycle(string vehicleBrand, string model, Fuel fuel, double fuelConsumption,
-                   int fuelTankCapasity, double maxSpeed, double startSpead)
-    {
-        VehicleBrand = vehicleBrand;
-        Model = model;
-        Fuel = fuel;
-        FuelConsumption = fuelConsumption;
-        FuelTankCapasity = fuelTankCapasity;
-        MaxSpeed = maxSpeed;
-        StartSpeed = startSpead;
+            int fuelTankCapacity, double maxSpeed, double startSpeed)
+        {
+            VehicleBrand = vehicleBrand;
+            Model = model;
+            Fuel = fuel;
+            FuelConsumption = fuelConsumption;
+            FuelTankCapacity = fuelTankCapacity;
+            MaxSpeed = maxSpeed;
+            StartSpeed = startSpeed;
 
-        Type = "Motorcycle";
+            Type = "Motorcycle";
         QuantityOfWheels = 2;
         QuantityOfPassengers = 2;
         Payload = 200;
@@ -30,7 +23,7 @@ namespace Model
         BrakingSystem = true;
         Headlights = true;
 
-        Refuel(fuelTankCapasity);
+        Refuel(fuelTankCapacity);
     }
 }
 }

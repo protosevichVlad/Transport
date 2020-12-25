@@ -9,7 +9,7 @@ namespace View
         string GetTypeVehicle();
         string GetFuelNameVehicle();
         double GetFuelConsumptionVehicle();
-        int GetFuelTankCapasityVehicle();
+        int GetFuelTankCapacityVehicle();
         int GetMaxSpeedVehicle();
         int GetStartSpeedVehicle();
 

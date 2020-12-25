@@ -1,24 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Model;
-
-namespace Model
+﻿namespace Model
 {
-    class Tram : Vehicle
+    public class Tram : Vehicle
     {
         public Tram(string vehicleBrand, string model, Fuel fuel, double fuelConsumption,
-                   int fuelTankCapasity, double maxSpeed, double startSpead)
+            int fuelTankCapacity, double maxSpeed, double startSpeed)
         {
             VehicleBrand = vehicleBrand;
             Model = model;
             Fuel = fuel;
             FuelConsumption = fuelConsumption;
-            FuelTankCapasity = fuelTankCapasity;
+            FuelTankCapacity = fuelTankCapacity;
             MaxSpeed = maxSpeed;
-            StartSpeed = startSpead;
+            StartSpeed = startSpeed;
 
             Type = "Tram";
             QuantityOfDoors = 3;
@@ -32,7 +25,7 @@ namespace Model
             Headlights = true;
             Trailer = true;
 
-            Refuel(fuelTankCapasity);
+            Refuel(fuelTankCapacity);
         }
     }
 }

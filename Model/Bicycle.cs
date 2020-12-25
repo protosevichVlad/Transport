@@ -1,17 +1,17 @@
 ﻿namespace Model
 {
-    class Bicycle : Vehicle
+    public class Bicycle : Vehicle
     {
         public Bicycle(string vehicleBrand, string model, Fuel fuel, double fuelConsumption,
-                   int fuelTankCapasity, double maxSpeed, double startSpead)
+                   int fuelTankCapacity, double maxSpeed, double startSpeed)
         {
             VehicleBrand = vehicleBrand;
             Model = model;
             Fuel = fuel;
             FuelConsumption = fuelConsumption;
-            FuelTankCapasity = fuelTankCapasity;
+            FuelTankCapacity = fuelTankCapacity;
             MaxSpeed = maxSpeed;
-            StartSpeed = startSpead;
+            StartSpeed = startSpeed;
 
             Type = "Bicycle";
             QuantityOfWheels = 2;
@@ -20,7 +20,7 @@
             Propeller = "Human";
             Purpose = "Personal";
 
-            Refuel(fuelTankCapasity);
+            Refuel(fuelTankCapacity);
         }
     }
 }

@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Model;
 using View;
 
 namespace Presenter
 {
-    public class VehiclePresentor
+    public class VehiclePresenter
     {
         private IVehicleView _view;
 
-        public VehiclePresentor(IVehicleView view)
+        public VehiclePresenter(IVehicleView view)
         {
             _view = view;
             List<string> fuels = new List<string>();
@@ -22,6 +21,11 @@ namespace Presenter
             _view.SetFuel(fuels);
         }
 
+        public void DisplayWindow()
+        {
+            _view.NextPage(ApplicationContext.Vehicles.Count);
+        }
+
         public void Submit()
         {
             ApplicationContext.Vehicles.Add(FactoryVehicles.CreateVehicle(
@@ -30,7 +34,7 @@ namespace Presenter
                 _view.GetModelVehicle(),
                 ApplicationContext.Fuels.Where(f => f.Name == _view.GetFuelNameVehicle()).FirstOrDefault(),
                 _view.GetFuelConsumptionVehicle(),
-                _view.GetFuelTankCapasityVehicle(),
+                _view.GetFuelTankCapacityVehicle(),
                 _view.GetMaxSpeedVehicle() / 3.6,
                 _view.GetStartSpeedVehicle() / 3.6
             ));
@@ -54,6 +58,7 @@ namespace Presenter
                     result.Remove("Bicycle");
                     result.Remove("Tank");
                     result.Remove("HorseDrawnCarriage");
+                    result.Remove("Scooter");
                     result.Remove("Tram");
                     break;
 
@@ -71,6 +76,7 @@ namespace Presenter
                     result.Remove("Trolleybus");
                     result.Remove("HorseDrawnCarriage");
                     result.Remove("Tram");
+                    result.Remove("Scooter");
                     break;
             }
             

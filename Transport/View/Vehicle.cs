@@ -9,11 +9,12 @@ namespace Transport
 {
     public partial class Vehicle : Form, IVehicleView
     {
-        private VehiclePresentor _presentor;
+        private VehiclePresenter _presenter;
         public Vehicle()
         {
             InitializeComponent();
-            _presentor = new VehiclePresentor(this);
+            _presenter = new VehiclePresenter(this);
+            _presenter.DisplayWindow();
         }
 
         public string GetBrandVehicle()
@@ -36,7 +37,7 @@ namespace Transport
             return comboBoxFuelType.Text;
         }
 
-        public int GetFuelTankCapasityVehicle()
+        public int GetFuelTankCapacityVehicle()
         {
             return (int)numericUpDownFuelTankCapacity.Value;
         }
@@ -61,7 +62,7 @@ namespace Transport
             textBoxBrand.Text = string.Empty;
             textBoxModel.Text = string.Empty;
             comboBoxType.Items.Clear();
-            comboBoxType.Items.AddRange(_presentor.GetTypeByIndex(index));
+            comboBoxType.Items.AddRange(_presenter.GetTypeByIndex(index));
             numericUpDownFuelConsumption.Value = 0;
             numericUpDownFuelTankCapacity.Value = 0;
             numericUpDownMaxSpeed.Value = 0;
@@ -79,7 +80,7 @@ namespace Transport
         {
             if (ValidateChildren(ValidationConstraints.Enabled))
             {
-                _presentor.Submit();
+                _presenter.Submit();
             }
         }
 

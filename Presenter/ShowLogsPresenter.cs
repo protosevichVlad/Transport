@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 using IronXL;
 using View;
-using Model;
+using ApplicationContext = Model.ApplicationContext;
 
 namespace Presenter
 {
@@ -30,16 +32,32 @@ namespace Presenter
             }
             
             var vehicle = ApplicationContext.Vehicles[index];
+            string path = ".";
+
+            if (_view.GetExportTypes().Contains("txt") ||
+                _view.GetExportTypes().Contains("word") ||
+                _view.GetExportTypes().Contains("excel"))
+            {
+                FolderBrowserDialog DirDialog = new FolderBrowserDialog();
+                DirDialog.Description = "Selecting a directory";
+                DirDialog.SelectedPath = @"C:\";
+
+                if (DirDialog.ShowDialog() == DialogResult.OK)
+                {
+                    path = DirDialog.SelectedPath;
+                    Console.WriteLine(path);
+                }
+            }
 
             if (_view.GetExportTypes().Contains("txt"))
             {
-                System.IO.File.WriteAllLines($@".\Log_{vehicle.VehicleBrand}_{vehicle.Model}.txt",
+                System.IO.File.WriteAllLines($@"{path}\Log_{vehicle.VehicleBrand}_{vehicle.Model}.txt",
                     vehicle.LogString.ToArray());
             }
 
             if (_view.GetExportTypes().Contains("word"))
             {
-                System.IO.File.WriteAllLines($@".\Log_{vehicle.VehicleBrand}_{vehicle.Model}.doc",
+                System.IO.File.WriteAllLines($@"{path}\Log_{vehicle.VehicleBrand}_{vehicle.Model}.doc",
                     vehicle.LogString.ToArray());
             }
             
@@ -62,7 +80,7 @@ namespace Presenter
                     newWorkSheet["B" + i].Value = row[1];
                 }
 
-                newXLFile.SaveAs($"Log_{vehicle.VehicleBrand}_{vehicle.Model}.xlsx");
+                newXLFile.SaveAs($@"{path}\Log_{vehicle.VehicleBrand}_{vehicle.Model}.xlsx");
             }
         }
 

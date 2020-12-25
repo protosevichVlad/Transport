@@ -18,7 +18,7 @@ namespace Presenter
         {   
             List<VehicleInForm> vehicleInForms = new List<VehicleInForm>();
             var vehicles = ApplicationContext.Vehicles;
-            var pictureBoxes = _view.GetPickureBoxWithVeclise();
+            var pictureBoxes = _view.GetPictureBoxWithVehicle();
             var informationOnForms = CreateListInformationOnForms();
             for (int i = 0; i < vehicles.Count; i++)
             {

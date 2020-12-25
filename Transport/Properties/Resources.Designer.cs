@@ -193,6 +193,16 @@ namespace Transport.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap TroRoad {
+            get {
+                object obj = ResourceManager.GetObject("TroRoad", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Truck {
             get {
                 object obj = ResourceManager.GetObject("Truck", resourceCulture);

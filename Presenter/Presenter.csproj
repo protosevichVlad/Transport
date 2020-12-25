@@ -52,7 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShowLogsPresenter.cs" />
     <Compile Include="TransportPresenter.cs" />
-    <Compile Include="VehiclePresentor.cs" />
+    <Compile Include="VehiclePresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

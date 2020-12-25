@@ -56,7 +56,7 @@ namespace Transport
             throw new NotImplementedException();
         }
 
-        public void CreateVihecle()
+        public void CreateVehicle()
         {
             throw new NotImplementedException();
         }
@@ -84,7 +84,7 @@ namespace Transport
             vehicle.ShowDialog();
         }
 
-        public List<PictureBox> GetPickureBoxWithVeclise()
+        public List<PictureBox> GetPictureBoxWithVehicle()
         {
             List<PictureBox> pictureBoxes = new List<PictureBox>();
             pictureBoxes.Add(pictureBox6);

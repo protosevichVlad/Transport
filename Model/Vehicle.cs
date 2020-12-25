@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Model;
 
 namespace Model
 {
@@ -21,7 +17,7 @@ namespace Model
         public double MaxSpeed { get; set; } = 0;
         public double StartSpeed { get; set; } = 0;
         public double CurrentSpeed { get; set; } = 0;
-        public int FuelTankCapasity { get; set; } = 0;
+        public int FuelTankCapacity { get; set; } = 0;
         public double CurrentFuelLevel { get; set; } = 0;
         public double FuelConsumption { get; set; } = 0;
         public string Propeller { get; set; } = "physical";
@@ -104,7 +100,7 @@ namespace Model
                     ShowMessage("The movement started.");
                     CurrentSpeed = StartSpeed;
                     InMotion = true;
-                    Acceleration = (MaxSpeed * MaxSpeed - StartSpeed * StartSpeed) / (FuelTankCapasity / FuelConsumption * 100000.0);
+                    Acceleration = (MaxSpeed * MaxSpeed - StartSpeed * StartSpeed) / (FuelTankCapacity / FuelConsumption * 100000.0);
                 }
                 else
                 {
@@ -166,7 +162,7 @@ namespace Model
 
         public void Refuel(int quantityFuel)
         {
-            if (CurrentFuelLevel + quantityFuel <= FuelTankCapasity)
+            if (CurrentFuelLevel + quantityFuel <= FuelTankCapacity)
             {
                 CurrentFuelLevel += quantityFuel;
                 ShowMessage($"The vehicle is filled with {quantityFuel} liters. The tank is {CurrentFuelLevel} liters full");
@@ -174,7 +170,7 @@ namespace Model
             else
             {
                 ShowMessage($"The tank is full.");
-                CurrentFuelLevel = FuelTankCapasity;
+                CurrentFuelLevel = FuelTankCapacity;
             }
         }
 
@@ -189,7 +185,7 @@ namespace Model
 
             if (Math.Floor(PassedWay / 50.0) < Math.Floor((PassedWay + deltaWay) / 50.0))
             {
-                ShowMessage($"\tCurrentSpeed: {CurrentSpeed};\tPassedWay: {PassedWay}; \t FuelLavel: {CurrentFuelLevel}");
+                ShowMessage($"\tCurrentSpeed: {CurrentSpeed};\tPassedWay: {PassedWay}; \t FuelLevel: {CurrentFuelLevel}");
             }
 
             PassedWay += deltaWay;

@@ -7,10 +7,10 @@ namespace View
     {
         void Start();
         void Stop();
-        void CreateVihecle();
+        void CreateVehicle();
         void CreateFuels();
         void ShowAllVehicles();
-        List<PictureBox> GetPickureBoxWithVeclise();
+        List<PictureBox> GetPictureBoxWithVehicle();
         List<Label> GetLabels();
         List<ProgressBar> GetProgressBars();
     }
